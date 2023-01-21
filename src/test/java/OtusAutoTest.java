@@ -39,6 +39,7 @@ public class OtusAutoTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.not(ExpectedConditions.attributeContains(By.cssSelector("input[name='city']"), "disabled", "disabled")));
         wait.until(ExpectedConditions.not(ExpectedConditions.attributeContains(By.cssSelector("input[name='country']"), "disabled", "disabled")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[name='city']+div")));
         dropDownMenuClick(By.cssSelector("input[name='city']+div"), By.cssSelector("button[title=Аксай"));
         dropDownMenuClick(By.cssSelector("input[name=english_level]+div"), By.cssSelector("button[title='Супер продвинутый (Mastery)']"));
         driver.findElement(By.cssSelector("#id_ready_to_relocate_1+span")).click();
